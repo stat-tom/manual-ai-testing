@@ -112,6 +112,7 @@ body {
   color: #1e293b;
 }
 .form-group input:focus { border-color: #2563EB; }
+.form-group input.input-error { border-color: #dc2626; }
 .btn {
   display: inline-flex;
   align-items: center;
