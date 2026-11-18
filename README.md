@@ -1,6 +1,6 @@
 # Manual AI Agent Testing 2026 — Resources
 
-This repository contains all the files you need to follow along
+This repository contains all the files you need to follow along.
 Download or fork it once and everything is in place for every section.
 
 ---
