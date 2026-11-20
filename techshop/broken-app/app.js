@@ -232,7 +232,7 @@ function updateCartItemQty(productId, newQty) {
 }
 
 function proceedToCheckoutBuggy() {
-  return false;
+  showPage('checkout');
 }
 
 /* ══════════════════════════════════════════
