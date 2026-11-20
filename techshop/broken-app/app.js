@@ -239,6 +239,36 @@ function proceedToCheckoutBuggy() {
    CHECKOUT — BUGGY
 ══════════════════════════════════════════ */
 function renderCheckoutSummary() {
+  const panel = document.getElementById('checkout-order-items');
+  if (!panel) return;
+
+  if (cart.length === 0) {
+    panel.innerHTML = '<p style="color:#94a3b8;font-size:0.88rem;">Your cart is empty.</p>';
+    return;
+  }
+
+  let html = '';
+  cart.forEach(item => {
+    const unitPrice = calcDiscountedBuggy(item.product.price, item.product.discount);
+    const sub = (parseFloat(unitPrice) * item.qty).toFixed(2);
+    html += `<div class="checkout-order-item">
+      <span>${item.product.name} × ${item.qty}</span>
+      <span>$${sub}</span>
+    </div>`;
+  });
+
+  const subtotal = buggyCalcCartTotal();
+  const shipping = '4.99';
+  const grandTotal = (parseFloat(subtotal) + parseFloat(shipping)).toFixed(2);
+
+  html += `
+    <div style="margin-top:14px;">
+      <div class="summary-row"><span>Subtotal</span><span>$${subtotal}</span></div>
+      <div class="summary-row"><span>Shipping</span><span>$${shipping}</span></div>
+      <div class="summary-row total"><span>Total</span><span>$${grandTotal}</span></div>
+    </div>`;
+
+  panel.innerHTML = html;
 }
 
 const CHECKOUT_REQUIRED_FIELDS = [

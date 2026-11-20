@@ -379,6 +379,15 @@ body {
   padding: 24px;
 }
 .checkout-order-panel h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 18px; }
+.checkout-order-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: #475569;
+}
+.checkout-order-item:last-of-type { border-bottom: none; }
 
 /* ── Toast ── */
 .toast {
